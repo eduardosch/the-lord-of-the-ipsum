@@ -23,7 +23,7 @@ export interface FormState {
 }
 
 const DEFAULT_FORM: FormState = {
-  locale: 'en',
+  locale: 'pt-br',
   theme: 'epic',
   character: 'general',
   tone: 'cinematic',
