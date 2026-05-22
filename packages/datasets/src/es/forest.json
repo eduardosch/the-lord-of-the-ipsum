@@ -1,0 +1,39 @@
+{
+  "general": [
+    "El bosque de Fangorn es antiguo más allá del cómputo de los hombres; sus árboles eran viejos cuando Gondor era joven y el mar era estrecho.",
+    "En Lothlórien el tiempo se mueve de manera diferente; las hojas doradas del mallorn flotan por un aire que huele a algo más antiguo y más puro que el mundo exterior.",
+    "El Bosque Negro se cierra alrededor del sendero como una mano oscura, y quienes se desvían del camino se encuentran desorientados y perdidos.",
+    "Los Ents se mueven despacio porque han aprendido que la prisa es un error, y tienen la memoria de los árboles de la que aprender.",
+    "Hay voces en los bosques antiguos que no tienen hablantes visibles, y si os desean bien o mal depende de cómo escucháis.",
+    "El bosque de Galadriel era un lugar fuera del tiempo, donde los viajeros se encontraban descansados y perturbados a partes iguales.",
+    "Los árboles de Fangorn recuerdan las guerras de la Primera Era; llevan agravios más antiguos que los reinos de los hombres.",
+    "En el corazón del bosque antiguo, hasta un mago podría sentirse joven e incierto, pues las cosas vivas más antiguas os miran a través vuestro.",
+    "La luz en Lothlórien viene de los propios árboles; no se necesita ninguna antorcha o fuego aquí, y ninguno parecería apropiado.",
+    "La voz de Bárbol era como el largo y lento crujido de una madera antigua, y llevaba el peso de los siglos en cada sílaba.",
+    "No entréis en el Bosque Viejo después del anochecer — consejo dado por quienes lo han hecho y han tenido la fortuna de regresar.",
+    "El brebaje de los Ents sabía a suelo profundo y lluvia larga y siglos de sol, y quienes lo bebieron sintieron crecer en ellos algo indefinible."
+  ],
+  "gandalf": [
+    "Los bosques más antiguos son archivos; recuerdan lo que ningún libro ha registrado y ningún erudito ha tenido la paciencia de preguntar.",
+    "He hablado con los árboles de Fangorn, y su ira por la deforestación de Isengard es algo en lo que no quisiera estar en el extremo receptor.",
+    "Ni siquiera yo conozco todos los nombres de las criaturas que habitan en los lugares profundos de Fangorn; algunas cosas son más antiguas que mi conocimiento."
+  ],
+  "legolas": [
+    "Los árboles aquí están vivos con más que savia; llevan memorias e intenciones, y no quisiera ofenderlos.",
+    "Podía escuchar a los mallorns cantar cuando entramos en Lothlórien, y por un momento olvidé todo lo oscuro que yacía fuera de sus fronteras.",
+    "Los elfos y los árboles tienen un entendimiento que va más allá de las palabras; sentimos su vejez y ellos sienten el dolor en nosotros."
+  ],
+  "gimli": [
+    "No soy aficionado a los bosques, por norma; no puedes ver lo que se acerca, el terreno es traicionero y todo parece igual.",
+    "Dicho esto, incluso yo pude sentir algo en Lothlórien que mi martillo no podía cuantificar y mi hacha no podía abordar.",
+    "Los árboles están bien en su lugar, pero bajo tierra — allí es donde realmente se puede apreciar la arquitectura."
+  ],
+  "frodo": [
+    "La Cofradía descansó en Lothlórien y allí soñé, o quizás no soñé, y no estaba seguro de cuál de las dos opciones era más aterradora.",
+    "Hay un consuelo en los bosques antiguos, incluso en los oscuros — estaban aquí antes de que empezara el problema y estarán aquí cuando acabe."
+  ],
+  "sam": [
+    "Nunca había visto árboles así, señor Frodo — parecen observarnos, y no todos ellos parecen complacidos con lo que ven.",
+    "Cuerda élfica y lembas élfico — hay que reconocer que los elfos hacen cosas que duran."
+  ]
+}

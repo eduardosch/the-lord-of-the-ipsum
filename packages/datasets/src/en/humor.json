@@ -1,0 +1,47 @@
+{
+  "general": [
+    "One does not simply walk into Mordor — one also needs to pack adequate supplies, arrange a will, and leave a very apologetic note for one's relatives.",
+    "The Fellowship spent three days arguing about which route to take, which was not unusual for a group of nine that included three different opinions per person.",
+    "Gandalf's arrival at Bilbo's party was precisely timed, which is more than can be said for his arrival at most meetings of actual strategic importance.",
+    "The ring of power turned out to be entirely plain in appearance, which was either proof of great evil or very poor branding.",
+    "Second breakfast is not a luxury in the Shire — it is a moral and philosophical necessity recognized by all reasonable people.",
+    "Legolas counted his kills throughout the battle while Gimli accused him of creative accounting, which is not something most battles feature prominently.",
+    "The eagles showed up at the last moment, as eagles do, leaving everyone to wonder why they couldn't have offered a lift several hundred miles earlier.",
+    "Saruman, for all his great power and centuries of learning, ultimately lost his tower to a group of very angry trees, which is a cautionary tale.",
+    "Pippin dropped a stone into a well in Moria and in doing so demonstrated that hobbits have an unusual talent for precisely wrong actions at precisely wrong moments.",
+    "Gollum's internal debate about the Ring was the most dramatic monologue in Middle-earth, performed entirely by one person for an audience of one person.",
+    "The Balrog of Moria had terrorized Khazad-dûm for centuries and was ultimately undone by a wizard who had been technically dead for three days.",
+    "Aragorn spent most of his life hiding in the wilderness as a ranger and then appeared at Rivendell looking exactly like someone who had been hiding in the wilderness.",
+    "Merry and Pippin's primary strategic contributions to the War of the Ring involved eating well, growing tall, and starting a revolution among the trees.",
+    "The Ringwraiths were among the most feared beings in Middle-earth and were consistently defeated by fire, water, and a small woman saying a memorable sentence.",
+    "Frodo has now left the Shire twice and returned once, which puts him significantly ahead of most hobbits on the adventuring-to-returning ratio."
+  ],
+  "gandalf": [
+    "You shall not pass! — though I admit I said it with somewhat more confidence than I felt at the time, which is the essence of good leadership.",
+    "I am a wizard; I make things look more impressive than they are, which is, now that I think about it, most of what wizardry consists of.",
+    "Fly, you fools! — admittedly not my most instructive farewell, but I was falling at the time, which limits one's capacity for detailed instruction.",
+    "Saruman once called me a fool of a Took, but that was Pippin; either way, the sentiment was misplaced — Tooks are surprisingly resilient.",
+    "I spent twenty years watching Bilbo before deciding it was time to send him on an adventure; I consider this commendable patience.",
+    "The problem with being a wizard is that everyone expects fireworks when what is really needed is a very precise and boring conversation."
+  ],
+  "sam": [
+    "Potatoes! Boil 'em, mash 'em, stick 'em in a stew — Gollum, I ask you, what is wrong with potatoes? This is not a difficult concept.",
+    "I said I'd go with Mr. Frodo to the ends of the earth, and it turns out the ends of the earth are significantly less pleasant than the name implies.",
+    "The Gaffer always said don't get mixed up with wizards; I should have listened, but then again he also said mushrooms were overrated, so his judgment is questionable.",
+    "I didn't want to see mountains or elves or dragon-country or thunderstorms on the way to the destination — and I got all of it, plus orcs."
+  ],
+  "legolas": [
+    "A red sun rises — blood has been spilled this night. Gimli told me this was needlessly dramatic, which I found rich coming from someone who screams when counting.",
+    "My eyes can see twenty miles in clear conditions; this has never helped me find anything when I actually needed to find it."
+  ],
+  "gimli": [
+    "Nobody tosses a dwarf — but if they offer to carry one politely and explain their reasons, we can sometimes be persuaded.",
+    "I never thought I would die fighting side by side with an elf, and yet I am almost getting used to the company, which alarms me somewhat.",
+    "The mines of Moria were magnificent once, and they will be magnificent again, once we deal with the Balrog and replace the ventilation."
+  ],
+  "frodo": [
+    "I feel thin, sort of stretched, like butter scraped over too much bread — which is a metaphor, not a recipe, though I could go for some butter right now.",
+    "I volunteered to take the Ring because no one else would, which seemed noble at the time; I have since developed a more nuanced view of volunteering.",
+    "Gollum has been both my worst companion and my best guide, which is the kind of paradox that makes a very long journey feel even longer."
+  ]
+}

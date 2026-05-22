@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Lord of the Ipsum - Epic Lorem Ipsum Generator</title>
+<!-- Tailwind CSS CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts for whimsical style -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Quicksand:wght@400;600;700&amp;family=Sora:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="custom-fonts">
+    :root {
+      --main-bg: #0f1e3c;
+      --container-bg: #264d72;
+      --input-bg: #326584;
+      --gold-accent: #f2ca50; /* Light Gold */
+      --text-main: #ffffff;
+      --text-muted: #d0c5af;
+    }
+    h1, h2, .hand-drawn {
+      font-family: 'Fredoka+One', cursive;
+      color: var(--gold-accent);
+    }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--main-bg);
+      color: var(--text-main);
+    }
+
+    /* Custom Slider Styling */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: transparent;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 6px;
+      cursor: pointer;
+      background: rgba(255,255,255,0.2);
+      border-radius: 3px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      height: 18px;
+      width: 18px;
+      border-radius: 50%;
+      background: var(--gold-accent);
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -6px;
+      box-shadow: 0 0 10px rgba(242, 202, 80, 0.5);
+    }
+  </style>
+<style data-purpose="layout-elements">
+    .river-path {
+      background-color: var(--container-bg);
+      border-radius: 50% / 10%;
+      transform: rotate(-3deg);
+      z-index: -1;
+    }
+
+    .floating-illustration {
+      filter: drop-shadow(0 10px 12px rgba(0,0,0,0.4));
+      transition: transform 0.3s ease;
+    }
+    .floating-illustration:hover {
+      transform: scale(1.1);
+    }
+    .character-frame {
+      border: 4px solid var(--gold-accent);
+      overflow: hidden;
+    }
+
+    /* Form styling for dark mode */
+    select, input[type="number"], input[type="text"] {
+      background-color: var(--input-bg);
+      color: white;
+      border-color: rgba(255,255,255,0.2);
+    }
+    input[type="radio"], input[type="checkbox"] {
+      background-color: var(--input-bg);
+      border-color: var(--gold-accent);
+    }
+    input[type="radio"]:checked, input[type="checkbox"]:checked {
+      background-color: var(--gold-accent);
+    }
+  </style>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            earthGreen: '#4a5d23',
+            earthBrown: '#8b5e34',
+            mirkwood: '#d0c5af',
+            gondorGold: '#f2ca50',
+            parchment: '#326584',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen relative overflow-x-hidden pb-20">
+<!-- BEGIN: MainContainer -->
+<main class="max-w-4xl mx-auto px-4 py-12 flex flex-col items-center relative z-10">
+<!-- BEGIN: Header -->
+<header class="text-center mb-16" data-purpose="site-header">
+<h1 class="text-5xl md:text-6xl uppercase tracking-tight text-gondorGold">The Lord of the Ipsum</h1>
+<p class="text-gondorGold/80 font-bold uppercase tracking-widest text-sm mt-2">Generate texts since from the Shire all into Mordor</p>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: InteractiveRiverSection -->
+<section class="relative w-full flex flex-col items-center" data-purpose="generator-section">
+<!-- Decorative Background Path Shape -->
+<div class="absolute top-20 left-1/2 -translate-x-1/2 w-[120%] h-[1500px] river-path opacity-80"></div>
+<!-- BEGIN: IllustrationGroupTop -->
+<!-- Top Right Character: Legolas -->
+<div class="absolute -right-10 top-0 w-32 md:w-48 floating-illustration hidden md:block" data-purpose="decoration">
+<img alt="Legolas" class="rounded-full character-frame aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXNKXkp8nX6sYOTqPgXyL6hiDJTUyxtCVgUzrn-IJs0cS4lNzJWxj1AJTZwrXYHBfJT-qwBfomGHJCieqYTUuVJirJD70MEcVQIPPxtIR2Qalt9uTRZzVun0kh70H_Q96B6tHdPuDpK0Zsow6xFLI9mP1gGJsIrFq9HzV6GBVS1DVKQWO0PDa9WQa1IZQ-6ylYSEE6mgOiD5dr8VgQZpkacQq3ZHBonACdy62mWlstN6CnWWuV8VP59RkdojaCMYMlAT9nR7WO7peO"/>
+</div>
+<!-- Top Left Character: Frodo -->
+<div class="absolute -left-10 top-20 w-32 md:w-44 floating-illustration hidden md:block" data-purpose="decoration">
+<img alt="Frodo" class="rounded-full character-frame aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkbAClAOXqJOdDi20fjK7GTEGrwVfKldfcG2HE1D-HCJO36xMoGAd1Oiax0JmwXobBqXUHIoIA9qgj45cEDROXFd534yU5kyzp0DZnUutj5mBm91bextkv01ekVzxbb-a20OchJDO4JxvI7MBDDDMTUN1qncS-DTiQ7hYIKQrnpzAapXtvVjn3t45_1J6Eo8xmCG-iCg_TZz9rwBtFvwbevd8ayrrNt9Yb4d98xnYFyGgqhFf9ww5TFqTosgKdWI45V3jJQmPV5zno"/>
+</div>
+<!-- END: IllustrationGroupTop -->
+<!-- BEGIN: GeneratorForm -->
+<div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 w-full max-w-3xl text-center relative z-20 border border-white/10" data-purpose="form-container">
+<h2 class="text-3xl md:text-4xl mb-6 leading-tight text-white uppercase">Customize Your Quest</h2>
+<form class="space-y-8 flex flex-col items-stretch text-left">
+<!-- Selectors Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Theme Selector -->
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-gondorGold mb-2">Theme</label>
+<select class="w-full p-3 rounded-lg border border-white/20 focus:ring-gondorGold focus:border-gondorGold text-sm">
+<option value="epic">Epic</option>
+<option value="mordor">Mordor</option>
+<option value="shire">Shire</option>
+<option value="battle">Battle</option>
+<option value="kingdom">Kingdom</option>
+<option value="forest">Forest</option>
+<option value="dwarven">Dwarven</option>
+<option value="elven">Elven</option>
+<option value="wizard">Wizard</option>
+<option value="journey">Journey</option>
+<option value="dark">Dark</option>
+<option value="humor">Humor</option>
+<option value="tavern">Tavern</option>
+<option value="prophecy">Prophecy</option>
+<option value="ancient">Ancient</option>
+</select>
+</div>
+<!-- Character Select -->
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-gondorGold mb-2">Character Voice</label>
+<select class="w-full p-3 rounded-lg border border-white/20 focus:ring-gondorGold focus:border-gondorGold text-sm">
+<option value="general">General</option>
+<option value="gandalf">Gandalf</option>
+<option value="aragorn">Aragorn</option>
+<option value="frodo">Frodo</option>
+<option value="sam">Samwise</option>
+<option value="legolas">Legolas</option>
+<option value="gimli">Gimli</option>
+<option value="boromir">Boromir</option>
+<option value="sauron">Sauron</option>
+<option value="saruman">Saruman</option>
+<option value="orc">Orc</option>
+<option value="elf">Elf</option>
+<option value="dwarf">Dwarf</option>
+<option value="ranger">Ranger</option>
+</select>
+</div>
+<!-- Tone Select -->
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-gondorGold mb-2">Tone</label>
+<div class="flex gap-4">
+<label class="flex items-center cursor-pointer text-sm font-bold uppercase text-white">
+<input checked="" class="text-gondorGold focus:ring-gondorGold mr-2" name="tone" type="radio"/> Poetic
+                </label>
+<label class="flex items-center cursor-pointer text-sm font-bold uppercase text-white">
+<input class="text-gondorGold focus:ring-gondorGold mr-2" name="tone" type="radio"/> Dark
+                </label>
+<label class="flex items-center cursor-pointer text-sm font-bold uppercase text-white">
+<input class="text-gondorGold focus:ring-gondorGold mr-2" name="tone" type="radio"/> Funny
+                </label>
+</div>
+</div>
+<!-- Formatting Select -->
+<div>
+<label class="block text-xs font-bold uppercase tracking-widest text-gondorGold mb-2">Formatting</label>
+<select class="w-full p-3 rounded-lg border border-white/20 focus:ring-gondorGold focus:border-gondorGold text-sm">
+<option value="none">None</option>
+<option value="uppercase">Uppercase</option>
+<option value="markdown">Markdown</option>
+<option value="quotes">Quotes</option>
+</select>
+</div>
+</div>
+<!-- Sliders Section -->
+<div class="space-y-6">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold uppercase tracking-widest text-gondorGold">Paragraphs</label>
+<span class="text-white font-bold" id="para-val">5</span>
+</div>
+<input class="w-full" max="10" min="1" oninput="document.getElementById('para-val').innerText = this.value" type="range" value="5"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold uppercase tracking-widest text-gondorGold">Words per Paragraph</label>
+<span class="text-white font-bold" id="word-val">50</span>
+</div>
+<input class="w-full" max="150" min="10" oninput="document.getElementById('word-val').innerText = this.value" step="5" type="range" value="50"/>
+</div>
+<!-- Darkness Slider -->
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-gondorGold">Darkness Scale (Atmosphere)</label>
+<input class="w-full" max="100" min="0" type="range" value="50"/>
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-tighter text-white/50 px-1">
+<span>Poetic</span>
+<span>Dark</span>
+<span>Funny</span>
+</div>
+</div>
+</div>
+<!-- Special Quick Generate Buttons -->
+<div class="flex flex-wrap justify-center gap-3 pt-4">
+<button class="px-4 py-2 rounded-full border border-gondorGold/30 text-[10px] font-bold uppercase text-gondorGold hover:bg-gondorGold hover:text-[#0f1e3c] transition-colors" type="button">Generate Funny</button>
+<button class="px-4 py-2 rounded-full border border-gondorGold/30 text-[10px] font-bold uppercase text-gondorGold hover:bg-gondorGold hover:text-[#0f1e3c] transition-colors" type="button">Like Tolkien</button>
+<button class="px-4 py-2 rounded-full border border-gondorGold/30 text-[10px] font-bold uppercase text-gondorGold hover:bg-gondorGold hover:text-[#0f1e3c] transition-colors" type="button">Ancient Prophecy</button>
+<button class="px-4 py-2 rounded-full border border-gondorGold/30 text-[10px] font-bold uppercase text-gondorGold hover:bg-gondorGold hover:text-[#0f1e3c] transition-colors" type="button">Like Mordor</button>
+</div>
+<!-- Generate Button -->
+<div class="flex justify-center pt-4">
+<button class="bg-gondorGold hover:bg-yellow-400 text-[#0f1e3c] font-bold py-4 px-16 rounded-full text-xl shadow-lg transition-transform active:scale-95 uppercase border-b-4 border-black/20" type="button">
+              Generate
+            </button>
+</div>
+</form>
+</div>
+<!-- END: GeneratorForm -->
+<!-- BEGIN: IllustrationGroupMiddle -->
+<!-- Middle Right Character: Gandalf -->
+<div class="absolute -right-20 top-[700px] w-40 md:w-56 floating-illustration hidden md:block" data-purpose="decoration">
+<img alt="Gandalf" class="rounded-full character-frame aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrOwJZOEMrUUcTNKj_de-me7-hrtYu2lkxwl6ORemmN_Ywc9VyrmdbiW1RurbVeaZADwvWO5T9dWQKbXKPthrAa0tB4ivrKaj0EOQbvOxLGJU4hs0VXW23B8rk6qLJt7a-KtxQKvcE5zQIuWmZqjBnQMj9DQXT4ACP8kzUAtWXHYnsHsnQt7WqAx-p6wVdF3OIIitJBr3hrmxjRdq5qf7iW-lIXwEP2LQDMv4waU7-jhgt8TdD106txJIQ6lHQTU4Vjgwy9eMOd04y"/>
+</div>
+<!-- Middle Left Character: Gimli -->
+<div class="absolute -left-16 top-[800px] w-24 md:w-32 floating-illustration hidden lg:block" data-purpose="decoration">
+<img alt="Gimli" class="rounded-full character-frame aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9ERqMW0iPBTGLJKEaBteHSbzXtTjtCSKvXeP5hvSnDc4mhuxrKUtwxLTIvElF6Gb6ckjPb7U5zxIbTXi7a1-eQgRYXnejLPDjwVqO8YXgvoYGbMtc9Jytm87ayCGzRaSs5MiQEMJHKas1m8FA8LLlexOq_PxRCbKH8BRT5BW3QAwb-b52ZqJOf60D09lk0a28ucRuLbqyJlrDrxGEXsg6wWp1lccYYY7TLmMSdnofzcqAQjWye9Wkg-s2lYZin9_z7tADE8WZQVVl"/>
+</div>
+<!-- END: IllustrationGroupMiddle -->
+<!-- BEGIN: ResultCard -->
+<div class="mt-20 w-full max-w-3xl" data-purpose="result-display">
+<div class="bg-[#326584]/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 md:p-12 text-white leading-relaxed space-y-4 border border-white/10 relative">
+<p>Far over the misty mountains cold to dungeons deep and caverns old. We must away ere break of day to seek the pale enchanted gold. Bilbo Baggins hobbit holes Shire-folk Shire-folk wizard's staff.</p>
+<p>Riddles in the dark precious Gollum my precious. Mordor shadows lengthening orcs Isengard white hand Saruman the Wise. Fellowship nine companions walk into Mordor simple task.</p>
+<p>Aragorn son of Arathorn Strider Ranger of the North. King of Gondor returned sword anduril flame of the west. Legolas greenleaf arrow true elven cloak Lembas bread.</p>
+<p>Gimli son of Gloin axe sharp beard long Moria khazad-dum. Balrog shadow and flame bridge of khazad-dum you shall not pass. Gandalf the Grey wizard arrival late precisely when he means to.</p>
+<p>Samwise Gamgee potatoes mash 'em boil 'em stick 'em in a stew. Mount Doom eagle flight Frodo lives ring bearer. Second breakfast elevenses afternoon tea dinner supper.</p>
+</div>
+<!-- Action Buttons -->
+<div class="mt-12 flex flex-wrap justify-center gap-4 px-4">
+<button class="flex-1 min-w-[200px] bg-gondorGold hover:bg-yellow-400 text-[#0f1e3c] font-bold py-4 px-8 rounded-full text-lg shadow-md transition-all uppercase tracking-wide border-b-4 border-black/20 flex items-center justify-center gap-2">
+<span>Copy Button</span>
+</button>
+<button class="flex-1 min-w-[200px] bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-full text-lg shadow-md transition-all uppercase tracking-wide border border-white/20 flex items-center justify-center gap-2">
+<span>Export JSON</span>
+</button>
+<button class="flex-1 min-w-[200px] bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-full text-lg shadow-md transition-all uppercase tracking-wide border border-white/20 flex items-center justify-center gap-2">
+<span>Export TXT</span>
+</button>
+</div>
+<!-- Decorative Shadow -->
+<div class="flex justify-center mt-2">
+<div class="w-60 h-4 bg-black/40 rounded-[100%]"></div>
+</div>
+</div>
+<!-- END: ResultCard -->
+</section>
+<!-- END: InteractiveRiverSection -->
+</main>
+<!-- END: MainContainer -->
+<!-- BEGIN: FooterDecor -->
+<footer class="mt-20 w-full bg-[#264d72] pt-10 pb-12 relative border-t border-white/5" data-purpose="page-footer">
+<div class="max-w-4xl mx-auto px-4 flex flex-wrap justify-center items-center gap-6 pb-8">
+<div class="w-32 md:w-40 floating-illustration">
+<img alt="Aragorn" class="rounded-full character-frame aspect-square object-cover shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_Mtl2HodkXkSA73mldPltNvwcHiX1oW2IAfbYeV3VnQtlbLG_Edb3RMY9RW5aNyfdYkbk9qFRLa-dOaHQ7KdtKbAgcBqReU4QI_vV2SF0Q8kyl2Lzw7xoX9cQSxC_yu02U5WWyUNohkx0jTdP6uQPG9XZRk1ZkqAyCj5FyRkm93e0_WUxoyQzKXSGqvNpydy0Prda3HuuAS4i2scPDn0kL6qv5AsczcHGLdYsCnw_Tb5tJOh1ABJL8sPls8TqO54R1M2JgyvonSWP"/>
+</div>
+<div class="w-32 md:w-40 floating-illustration">
+<img alt="Samwise" class="rounded-full character-frame aspect-square object-cover shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA02kwILTsG3UtXgj0LJ5klvkOFLitgJsgnBNcnsX9XhlJNCoQJmDOEQEjwkvqU9Q0VFOSAPMmJlenCTZE-v8oAd5K-dgznOs42eNnNBT8eDlPAJWg6GrV_zEJomSfLuyGRKqlYVL_J3se_0xY8UZqs3LSRI_C6Z42XVFt8gD-GCuumzSlEx1IEJRYe8TIL9XBlDnvGEtYZ_T_LoKsxPfU-XTYVIiNFol6DMlfR535ebAVDY45JhV3wAsoup_JCl1N874r7ois3xVVI"/>
+</div>
+<div class="w-32 md:w-40 floating-illustration">
+<img alt="Sauron" class="rounded-full character-frame aspect-square object-cover shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwfkSOq1XeXT3pRqsqFr2myFzG4z7dvjHOtC5Du-w13DMulp6fWStNO_u9mFbxJkwUb6NJ-Hh8xmYba7KY7u-GQkKh5C0GejpMepDm4SQAzU5Y28TDOAtYR2GKW1zfE7TVvpYfg8x3Bvm0nfcjt9Hzbmo61RfVXMuuvx4-ydbYDTvJ_fpJrT7zZpi46UmrqVyVIHW5BnYcppw0oOrH23xD8TO_ZYbVB4SOsK5jdNRJeVe5MenLD1VptDeXASyVR6I64InmLKmSpOBf"/>
+</div>
+<div class="w-32 md:w-40 floating-illustration">
+<img alt="Saruman Tower" class="rounded-full character-frame aspect-square object-cover shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXITZ-GEUdVVS5bqDme1Z9-tWvPQ6jFDYEzcvZVjt9VKyyLth-CymQhZi435QJ9LkwN9yhodeb2C652wRhycdeiPE6WnFULKT41zv3RlmZ-fNnWE6v8os4cAEOjAyGyJ1weqLjkXX8qMQ9yjSTL4lvSDNa6pJXU9_505hVtRpIY19MGD4229KapyCpbAdJLn0pUMb4E0mEUS9jop0lTPKK9H9atUKQaQkABstcrOUvUQXnbh8wsE9AmTb6I5sB1b-6enQ4AhbwLJPP"/>
+</div>
+<div class="w-32 md:w-40 floating-illustration">
+<img alt="Orc Saruman" class="rounded-full character-frame aspect-square object-cover shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuHiNsUglDEvLspKfcGYaRvjJ0PLP_2o5i2xzafoWssaOknhaLQwAhdNS1iTlVi4ruq5q4dwBcI_1X-B7sce7LgbslXmEgYYtEcHQFdZNBRcVhgikp5jgUppb-ClhkiRuOH533HCvBJ3PUF5wPYmZleev4giy9ABZpbypqcqMYG9UiOa151HUF3i9iTYg7EcbpwH3vAl3db-pS_FuzlsO6_gFioIo6BZ7mCbIhx_jKtMVcpTX0WqJewDfLmQwmKlQ7-NgWmubvkEll"/>
+</div>
+</div>
+<div class="text-center text-gondorGold/40 text-xs mt-4 uppercase tracking-[0.2em]">Made with magic in Middle-earth</div>
+</footer>
+<!-- END: FooterDecor -->
+<script data-purpose="interactivity">
+    // Simple script to simulate button click effect
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.add('scale-95');
+        setTimeout(() => button.classList.remove('scale-95'), 100);
+      });
+    });
+  </script>
+</body></html>

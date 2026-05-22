@@ -1,0 +1,45 @@
+{
+  "general": [
+    "No se entra simplemente en Mordor — también hay que empacar provisiones suficientes, redactar un testamento y dejar una nota muy disculpatoria para los familiares.",
+    "La Cofradía pasó tres días discutiendo qué ruta tomar, lo cual no era inusual para un grupo de nueve con tres opiniones distintas por persona.",
+    "La llegada de Gandalf a la fiesta de Bilbo estaba cronometrada con precisión, lo que no puede decirse de su llegada a la mayoría de reuniones de importancia estratégica.",
+    "El Anillo de poder resultó ser completamente llano en apariencia, lo cual era prueba de gran maldad o de muy mala imagen de marca.",
+    "El segundo desayuno no es un lujo en la Comarca — es una necesidad moral y filosófica reconocida por toda persona razonable.",
+    "Legolas contó sus bajas durante toda la batalla mientras Gimli le acusaba de contabilidad creativa, lo que no suele ser un rasgo destacado de las batallas.",
+    "Las Águilas aparecieron en el último momento, como hacen las águilas, dejando a todos preguntándose por qué no pudieron ofrecer un transporte varios cientos de millas antes.",
+    "Saruman, con todo su gran poder y sus siglos de aprendizaje, perdió finalmente su torre frente a un grupo de árboles muy enfadados, lo cual es una advertencia.",
+    "Pippin lanzó una piedra a un pozo en Moria y demostró así que los hobbits tienen un talento inusual para las acciones exactamente equivocadas en los momentos exactamente equivocados.",
+    "El debate interno de Gollum sobre el Anillo fue el monólogo más dramático de la Tierra Media, interpretado íntegramente por una persona para una audiencia de una persona.",
+    "El Balrog de Moria había aterrorizado Khazad-dûm durante siglos y fue finalmente derrotado por un mago que técnicamente había estado muerto durante tres días.",
+    "Aragorn pasó la mayor parte de su vida escondido en la naturaleza como montaraz y luego apareció en Rivendel con exactamente el aspecto de alguien que se ha estado escondiendo.",
+    "Merry y Pippin contribuyeron estratégicamente a la Guerra del Anillo comiendo bien, creciendo en estatura e iniciando una revolución entre los árboles.",
+    "Frodo ha abandonado la Comarca dos veces y regresado una, lo que le pone significativamente por delante de la mayoría de hobbits en ratio aventura-retorno."
+  ],
+  "gandalf": [
+    "¡No pasaréis! — aunque lo dije con algo más de confianza de la que sentía en ese momento, lo cual es la esencia del buen liderazgo.",
+    "Soy un mago; hago que las cosas parezcan más impresionantes de lo que son, lo cual, ahora que lo pienso, constituye la mayor parte de la magia.",
+    "¡Huid, necios! — admito que no fue mi despedida más instructiva, pero en ese momento estaba cayendo, lo que limita la capacidad de dar instrucciones detalladas.",
+    "Pasé veinte años observando a Bilbo antes de decidir que era hora de enviarlo a una aventura; considero esto una paciencia encomiable.",
+    "El problema de ser mago es que todo el mundo espera fuegos artificiales cuando lo que se necesita es una conversación muy precisa y muy aburrida."
+  ],
+  "sam": [
+    "¡Patatas! Cocidas, machacadas, en un guiso — Gollum, os pregunto, ¿qué tiene de malo una patata? No es un concepto difícil.",
+    "Dije que iría con el señor Frodo hasta los confines de la tierra, y resulta que los confines de la tierra son considerablemente menos agradables de lo que implica el nombre.",
+    "El Tío siempre decía que no os mezcléis con magos; debería haberle hecho caso, pero también decía que las setas estaban sobrevaloradas, así que su criterio es cuestionable.",
+    "No quería ver montañas ni elfos ni tormentas en el camino al destino — y me llevé todo eso, más orcos."
+  ],
+  "legolas": [
+    "Sale un sol rojo — esta noche se ha derramado sangre. Gimli me dijo que eso era innecesariamente dramático, lo cual encontré jugoso viniendo de alguien que grita al contar.",
+    "Mis ojos pueden ver veinte millas en condiciones claras; esto nunca me ha ayudado a encontrar nada cuando realmente necesitaba encontrarlo."
+  ],
+  "gimli": [
+    "Nadie lanza a un enano — pero si alguien ofrece cargar con uno educadamente y explica sus razones, a veces se puede llegar a un acuerdo.",
+    "Nunca pensé que moriría luchando codo a codo con un elfo, y sin embargo casi me estoy acostumbrando a la compañía, lo cual me alarma un poco.",
+    "Las minas de Moria fueron magníficas una vez y volverán a serlo, una vez que nos ocupemos del Balrog y reemplacemos la ventilación."
+  ],
+  "frodo": [
+    "Me siento delgado, algo estirado, como mantequilla raspada sobre demasiado pan — esto es una metáfora, no una receta, aunque ahora mismo me vendría bien mantequilla.",
+    "Me ofrecí voluntario para llevar el Anillo porque nadie más lo haría, lo que parecía noble en ese momento; desde entonces he desarrollado una visión más matizada del voluntariado.",
+    "Gollum ha sido a la vez mi peor compañero y mi mejor guía, lo cual es la clase de paradoja que hace que un viaje muy largo parezca aún más largo."
+  ]
+}

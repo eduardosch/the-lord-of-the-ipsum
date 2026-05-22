@@ -1,0 +1,12 @@
+{
+  "name": "@lord-of-the-ipsum/datasets",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./en": "./src/en/index.ts",
+    "./pt-br": "./src/pt-br/index.ts",
+    "./de": "./src/de/index.ts",
+    "./es": "./src/es/index.ts"
+  }
+}
