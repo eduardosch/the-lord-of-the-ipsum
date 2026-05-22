@@ -1,0 +1,111 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background: v.$color-deep;
+
+  &__main {
+    flex: 1;
+    max-width: 56rem;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  &__river-path {
+    position: absolute;
+    left: 50%;
+    width: 120%;
+    z-index: -10;
+    top: 5rem;
+    background: v.$color-keep;
+    border-radius: 50% / 10%;
+    height: 0;
+    opacity: 0;
+    transform: translateX(-50%);
+
+    @include m.md {
+      height: 1300px;
+      opacity: 0.8;
+      transform: translateX(-50%) rotate(-3deg);
+    }
+  }
+
+  &__float {
+    position: absolute;
+    display: none;
+    filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.4));
+    transition: transform 0.3s;
+
+    @include m.md { display: block; }
+
+    &:hover { transform: scale(1.1); }
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 4px solid v.$color-gold-light;
+      display: block;
+    }
+
+    &--legolas {
+      right: -2.5rem;
+      top: 0;
+      width: 8rem;
+      @include m.md { width: 12rem; }
+    }
+
+    &--frodo {
+      left: -2.5rem;
+      top: 5rem;
+      width: 8rem;
+      @include m.md { width: 11rem; }
+    }
+
+    &--gandalf {
+      right: -5rem;
+      top: 700px;
+      width: 10rem;
+      @include m.md { width: 14rem; }
+    }
+
+    &--gimli {
+      left: -4rem;
+      top: 800px;
+      display: none;
+      width: 6rem;
+      @include m.lg { display: block; width: 8rem; }
+    }
+  }
+
+  &__result-desktop {
+    display: none;
+    width: 100%;
+    @include m.sm { display: block; }
+  }
+
+  &__result-mobile {
+    width: 100%;
+    @include m.sm { display: none; }
+  }
+}

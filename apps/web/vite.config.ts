@@ -7,6 +7,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(__dirname, '../..')
 
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: { api: 'modern-compiler' },
+    },
+  },
   plugins: [react()],
   server: {
     host: '0.0.0.0',

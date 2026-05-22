@@ -1,0 +1,100 @@
+@use 'variables' as v;
+
+@font-face {
+  font-family: 'Ring Bearer';
+  src: url('/fonts/RINGM___.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: v.$color-deep;
+  color: v.$color-parchment;
+  font-family: v.$font-body;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: v.$font-headline;
+  margin: 0;
+}
+
+button {
+  font-family: v.$font-body;
+  cursor: pointer;
+}
+
+select {
+  background-color: v.$color-forge;
+  color: v.$color-parchment;
+  border: 1px solid rgba(v.$color-silver, 0.3);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-family: v.$font-body;
+  font-size: 0.875rem;
+  width: 100%;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23A9A9A9' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: v.$color-gold;
+    box-shadow: 0 0 0 2px rgba(v.$color-gold, 0.2);
+  }
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+
+  &::-webkit-slider-runnable-track {
+    height: 4px;
+    background: rgba(v.$color-silver, 0.25);
+    border-radius: 2px;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: v.$color-gold;
+    box-shadow: 0 0 8px rgba(v.$color-gold, 0.6);
+  }
+
+  &:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 16px rgba(v.$color-gold, 0.9);
+  }
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+  }
+}

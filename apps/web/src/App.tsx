@@ -35,12 +35,11 @@ const DEFAULT_FORM: FormState = {
   seed: '',
 }
 
-// Floating character portraits shown around the form
 const FLOAT_CHARS = {
   legolas: '/images/legolas.png',
   frodo:   '/images/frodo.png',
   gandalf: '/images/gandalf.png',
-  gimli:   '/images/orc.png', // placeholder until a Gimli image is added
+  gimli:   '/images/orc.png',
 }
 
 export default function App() {
@@ -99,45 +98,24 @@ export default function App() {
   }, [result])
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden" style={{ background: '#0f1e3c' }}>
-      <LanguagePicker locale={form.locale} onChange={(locale) => { setForm(f => ({ ...f, locale })); i18n.changeLanguage(locale) }} />
-      <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-12 flex flex-col items-center relative z-10">
+    <div className="app">
+      <LanguagePicker
+        locale={form.locale}
+        onChange={(locale) => { setForm(f => ({ ...f, locale })); i18n.changeLanguage(locale) }}
+      />
+      <main className="app__main">
         <Header />
 
-        {/* Generator section with river path + floating characters */}
-        <section className="relative w-full flex flex-col items-center mb-20">
-          {/* River path decorative background */}
-          <div
-            className="river-path absolute left-1/2 w-[120%] h-0 sm:h-auto opacity-0 sm:opacity-80 -z-10"
-            style={{
-              top: '5rem',
-              height: '1300px',
-              background: '#264d72',
-              borderRadius: '50% / 10%',
-            }}
-          />
+        <section className="app__section">
+          <div className="app__river-path" />
 
-          {/* Top-right: Legolas */}
-          <div
-            className="absolute -right-10 top-0 w-32 md:w-48 hidden md:block transition-transform duration-300 hover:scale-110"
-            style={{ filter: 'drop-shadow(0 10px 12px rgba(0,0,0,0.4))' }}
-          >
-            <img alt="Legolas" src={FLOAT_CHARS.legolas}
-              className="rounded-full w-full aspect-square object-cover"
-              style={{ border: '4px solid var(--color-gold-light)' }} />
+          <div className="app__float app__float--legolas">
+            <img alt="Legolas" src={FLOAT_CHARS.legolas} />
+          </div>
+          <div className="app__float app__float--frodo">
+            <img alt="Frodo" src={FLOAT_CHARS.frodo} />
           </div>
 
-          {/* Top-left: Frodo */}
-          <div
-            className="absolute -left-10 top-20 w-32 md:w-44 hidden md:block transition-transform duration-300 hover:scale-110"
-            style={{ filter: 'drop-shadow(0 10px 12px rgba(0,0,0,0.4))' }}
-          >
-            <img alt="Frodo" src={FLOAT_CHARS.frodo}
-              className="rounded-full w-full aspect-square object-cover"
-              style={{ border: '4px solid var(--color-gold-light)' }} />
-          </div>
-
-          {/* Form */}
           <GeneratorForm
             form={form}
             onChange={setForm}
@@ -145,30 +123,16 @@ export default function App() {
             isGenerating={isGenerating}
           />
 
-          {/* Middle-right: Gandalf */}
-          <div
-            className="absolute -right-20 w-40 md:w-56 hidden md:block transition-transform duration-300 hover:scale-110"
-            style={{ top: '700px', filter: 'drop-shadow(0 10px 12px rgba(0,0,0,0.4))' }}
-          >
-            <img alt="Gandalf" src={FLOAT_CHARS.gandalf}
-              className="rounded-full w-full aspect-square object-cover"
-              style={{ border: '4px solid var(--color-gold-light)' }} />
+          <div className="app__float app__float--gandalf">
+            <img alt="Gandalf" src={FLOAT_CHARS.gandalf} />
           </div>
-
-          {/* Middle-left: Gimli */}
-          <div
-            className="absolute -left-16 w-24 md:w-32 hidden lg:block transition-transform duration-300 hover:scale-110"
-            style={{ top: '800px', filter: 'drop-shadow(0 10px 12px rgba(0,0,0,0.4))' }}
-          >
-            <img alt="Gimli" src={FLOAT_CHARS.gimli}
-              className="rounded-full w-full aspect-square object-cover"
-              style={{ border: '4px solid var(--color-gold-light)' }} />
+          <div className="app__float app__float--gimli">
+            <img alt="Gimli" src={FLOAT_CHARS.gimli} />
           </div>
 
           {/* Desktop: always visible with placeholder */}
-          <div className="hidden sm:block w-full">
+          <div className="app__result-desktop">
             <motion.div
-              className="w-full"
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -184,12 +148,11 @@ export default function App() {
           </div>
 
           {/* Mobile: only shown after first generate */}
-          <div className="sm:hidden w-full">
+          <div className="app__result-mobile">
             <AnimatePresence>
               {result && (
                 <motion.div
                   key="mobile-result"
-                  className="w-full"
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}

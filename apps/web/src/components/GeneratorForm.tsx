@@ -30,30 +30,6 @@ const PRESET_OVERRIDES: { key: 'funny' | 'tolkien' | 'prophecy' | 'mordor'; over
   { key: 'mordor',   overrides: { theme: 'mordor',  tone: 'dark',     character: 'sauron' } },
 ]
 
-function SliderField({ label, value, min, max, onChange }: {
-  label: string; value: number; min: number; max: number; onChange: (v: number) => void
-}) {
-  return (
-    <div className="flex flex-col gap-2">
-      <div className="flex justify-between items-center">
-        <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--color-gold-light)' }}>
-          {label}
-        </span>
-        <span className="font-bold text-white">{value}</span>
-      </div>
-      <input type="range" min={min} max={max} value={value} onChange={(e) => onChange(Number(e.target.value))} />
-    </div>
-  )
-}
-
-function Label({ children }: { children: React.ReactNode }) {
-  return (
-    <label className="block text-xs font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--color-gold-light)' }}>
-      {children}
-    </label>
-  )
-}
-
 export function GeneratorForm({ form, onChange, onGenerate, isGenerating }: Props) {
   const { t } = useTranslation()
   const [length, setLength] = useState<Length>('medium')
@@ -67,97 +43,64 @@ export function GeneratorForm({ form, onChange, onGenerate, isGenerating }: Prop
   }
 
   return (
-    <div
-      className="w-full max-w-2xl mx-auto text-center relative z-20 p-5 sm:p-8 md:p-10"
-      style={{
-        background: 'rgba(255,255,255,0.05)',
-        backdropFilter: 'blur(4px)',
-        borderRadius: '1.5rem',
-        border: '1px solid rgba(255,255,255,0.1)',
-      }}
-    >
-      <h2 className="text-xl md:text-2xl mb-6 leading-tight uppercase font-headline font-bold" style={{ color: '#fff' }}>
-        {t('form.title')}
-      </h2>
+    <div className="generator-form">
+      <h2 className="generator-form__title">{t('form.title')}</h2>
 
-      <div className="space-y-6 text-left">
+      <div className="generator-form__body">
 
-        {/* Preset buttons — primary CTA */}
-        <div className="grid grid-cols-2 gap-3">
+        {/* Preset buttons */}
+        <div className="generator-form__presets">
           {PRESET_OVERRIDES.map((p) => (
             <button
               key={p.key}
               type="button"
+              className="generator-form__preset-btn"
               onClick={() => { onChange({ ...form, ...p.overrides }); onGenerate(p.overrides) }}
-              className="py-3 px-4 text-xs font-bold uppercase tracking-wide transition-colors text-center"
-              style={{
-                borderRadius: '0.75rem',
-                border: '1px solid rgba(242,202,80,0.35)',
-                color: 'var(--color-gold-light)',
-                background: 'rgba(242,202,80,0.07)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'var(--color-gold-light)'
-                e.currentTarget.style.color = '#0f1e3c'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(242,202,80,0.07)'
-                e.currentTarget.style.color = 'var(--color-gold-light)'
-              }}
             >
               {t(`form.presets.${p.key}`)}
             </button>
           ))}
         </div>
 
-        {/* Configs — desktop only */}
-        <div className="hidden sm:contents">
-          {/* Divider */}
-          <div className="separator text-xs uppercase tracking-widest" style={{ color: 'rgba(169,169,169,0.5)' }}>
+        {/* Desktop-only configs */}
+        <div className="generator-form__configs">
+          <div className="separator generator-form__divider">
             {t('form.orCustomize')}
           </div>
 
-          {/* Theme / Character / Tone */}
-          <div className="grid grid-cols-3 gap-4">
-            <div>
-              <Label>{t('form.theme')}</Label>
+          <div className="generator-form__selects">
+            <div className="generator-form__select-group">
+              <label className="generator-form__label">{t('form.theme')}</label>
               <select value={form.theme} onChange={(e) => set('theme', e.target.value as Theme)}>
                 {THEME_VALUES.map((v) => <option key={v} value={v}>{t(`themes.${v}`)}</option>)}
               </select>
             </div>
-            <div>
-              <Label>{t('form.characterVoice')}</Label>
+            <div className="generator-form__select-group">
+              <label className="generator-form__label">{t('form.characterVoice')}</label>
               <select value={form.character} onChange={(e) => set('character', e.target.value as Character)}>
                 {CHARACTER_VALUES.map((v) => <option key={v} value={v}>{t(`characters.${v}`)}</option>)}
               </select>
             </div>
-            <div>
-              <Label>{t('form.tone')}</Label>
+            <div className="generator-form__select-group">
+              <label className="generator-form__label">{t('form.tone')}</label>
               <select value={form.tone} onChange={(e) => set('tone', e.target.value as Tone)}>
                 {TONE_VALUES.map((v) => <option key={v} value={v}>{t(`tones.${v}`)}</option>)}
               </select>
             </div>
           </div>
 
-          {/* Paragraph mode toggle */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
+          <div className="generator-form__paragraph-controls">
+            <div className="generator-form__toggle-row">
               <button
                 type="button"
                 role="switch"
                 aria-checked={form.paragraphs}
+                className={`generator-form__toggle${form.paragraphs ? ' generator-form__toggle--on' : ''}`}
                 onClick={() => set('paragraphs', !form.paragraphs)}
-                className="relative w-10 h-5 rounded-full transition-colors flex-shrink-0 mt-3"
-                style={{ background: form.paragraphs ? 'var(--color-gold)' : 'rgba(169,169,169,0.3)' }}
               >
-                <span
-                  className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform"
-                  style={{ transform: form.paragraphs ? 'translateX(20px)' : 'translateX(0)' }}
-                />
+                <span className={`generator-form__toggle-thumb${form.paragraphs ? ' generator-form__toggle-thumb--on' : ''}`} />
               </button>
-              <span className="text-xs font-bold uppercase tracking-widest mt-3" style={{ color: 'var(--color-gold-light)' }}>
-                {t('form.paragraphMode')}
-              </span>
+              <span className="generator-form__toggle-label">{t('form.paragraphMode')}</span>
             </div>
 
             {form.paragraphs ? (
@@ -177,23 +120,28 @@ export function GeneratorForm({ form, onChange, onGenerate, isGenerating }: Prop
         {/* Generate button */}
         <motion.button
           type="button"
+          className="generator-form__generate-btn"
           onClick={() => onGenerate()}
           disabled={isGenerating}
           whileTap={{ scale: 0.97 }}
-          className="w-full font-bold py-4 text-lg uppercase disabled:opacity-60 transition-colors"
-          style={{
-            borderRadius: '9999px',
-            background: 'var(--color-gold-light)',
-            color: '#0f1e3c',
-            borderBottom: '4px solid rgba(0,0,0,0.2)',
-            boxShadow: '0 4px 24px rgba(242,202,80,0.3)',
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = '#facc15' }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--color-gold-light)' }}
         >
           {isGenerating ? t('form.forging') : t('form.generate')}
         </motion.button>
       </div>
+    </div>
+  )
+}
+
+function SliderField({ label, value, min, max, onChange }: {
+  label: string; value: number; min: number; max: number; onChange: (v: number) => void
+}) {
+  return (
+    <div className="generator-form__slider">
+      <div className="generator-form__slider-header">
+        <span className="generator-form__slider-label">{label}</span>
+        <span className="generator-form__slider-value">{value}</span>
+      </div>
+      <input type="range" min={min} max={max} value={value} onChange={(e) => onChange(Number(e.target.value))} />
     </div>
   )
 }
