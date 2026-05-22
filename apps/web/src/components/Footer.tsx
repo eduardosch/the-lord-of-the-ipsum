@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 const CHARACTERS = [
   { name: 'Aragorn',  src: '/images/aragorn.png' },
   { name: 'Samwise',  src: '/images/sam.png' },
@@ -7,6 +9,7 @@ const CHARACTERS = [
 ]
 
 export function Footer() {
+  const { t } = useTranslation()
   return (
     <footer
       className="mt-20 w-full pt-10 pb-12 relative"
@@ -15,7 +18,7 @@ export function Footer() {
         borderTop: '1px solid rgba(255,255,255,0.05)',
       }}
     >
-      <div className="max-w-4xl mx-auto px-4 flex flex-wrap justify-center items-center gap-6 pb-8">
+      <div className="max-w-4xl mx-auto px-4 flex flex-nowrap justify-center items-center gap-6 pb-8">
         {CHARACTERS.map((c) => (
           <div
             key={c.name}
@@ -35,7 +38,7 @@ export function Footer() {
         className="text-center text-xs uppercase mt-4"
         style={{ color: 'rgba(242,202,80,0.4)', letterSpacing: '0.2em' }}
       >
-        Made with magic in Middle-earth
+        {t('footer.credit')}
       </div>
     </footer>
   )

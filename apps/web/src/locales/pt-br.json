@@ -1,0 +1,69 @@
+{
+  "header": {
+    "tagline": "Gere textos desde o Shire até Mordor"
+  },
+  "footer": {
+    "credit": "Feito com magia na Terra Média"
+  },
+  "form": {
+    "title": "Personalize Sua Jornada",
+    "theme": "Tema",
+    "characterVoice": "Personagem",
+    "tone": "Tom",
+    "formatting": "Formatação",
+    "seed": "Semente (opcional)",
+    "seedPlaceholder": "ex: mordor, shire, barad-dur…",
+    "paragraphMode": "Modo Parágrafo",
+    "paragraphs": "Parágrafos",
+    "sentencesPerParagraph": "Frases por Parágrafo",
+    "sentences": "Frases",
+    "generate": "Gerar",
+    "forging": "Forjando…",
+    "presets": {
+      "funny": "Gerar Engraçado",
+      "tolkien": "Como Tolkien",
+      "prophecy": "Profecia Antiga",
+      "mordor": "Como Mordor"
+    }
+  },
+  "result": {
+    "empty": "Seu texto gerado aparecerá aqui. Escolha um tema, personagem e tom, depois pressione Gerar.",
+    "copy": "Copiar Texto",
+    "copied": "✓ Copiado!",
+    "exportJson": "Exportar JSON",
+    "exportTxt": "Exportar TXT"
+  },
+  "themes": {
+    "epic": "Épico",
+    "mordor": "Mordor",
+    "shire": "O Shire",
+    "battle": "Batalha",
+    "forest": "Floresta",
+    "wizard": "Mago",
+    "humor": "Humor",
+    "ancient": "Antigo"
+  },
+  "characters": {
+    "general": "Geral",
+    "gandalf": "Gandalf",
+    "aragorn": "Aragorn",
+    "frodo": "Frodo",
+    "sam": "Samwise",
+    "legolas": "Legolas",
+    "gimli": "Gimli",
+    "sauron": "Sauron"
+  },
+  "tones": {
+    "cinematic": "Cinematográfico",
+    "poetic": "Poético",
+    "dark": "Sombrio",
+    "heroic": "Heroico",
+    "funny": "Engraçado"
+  },
+  "formattings": {
+    "none": "Nenhum",
+    "uppercase": "Maiúsculas",
+    "quotes": "Aspas",
+    "markdown": "Markdown"
+  }
+}

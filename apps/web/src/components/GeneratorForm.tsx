@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import type { FormState } from '../App'
 import type { Theme, Character, Tone, Formatting } from '@lord-of-the-ipsum/core'
 
@@ -9,49 +10,16 @@ interface Props {
   isGenerating: boolean
 }
 
-const THEMES: { value: Theme; label: string }[] = [
-  { value: 'epic', label: 'Epic' },
-  { value: 'mordor', label: 'Mordor' },
-  { value: 'shire', label: 'The Shire' },
-  { value: 'battle', label: 'Battle' },
-  { value: 'forest', label: 'Forest' },
-  { value: 'wizard', label: 'Wizard' },
-  { value: 'humor', label: 'Humor' },
-  { value: 'ancient', label: 'Ancient' },
-]
+const THEME_VALUES: Theme[] = ['epic', 'mordor', 'shire', 'battle', 'forest', 'wizard', 'humor', 'ancient']
+const CHARACTER_VALUES: Character[] = ['general', 'gandalf', 'aragorn', 'frodo', 'sam', 'legolas', 'gimli', 'sauron']
+const TONE_VALUES: Tone[] = ['cinematic', 'poetic', 'dark', 'heroic', 'funny']
+const FORMATTING_VALUES: Formatting[] = ['none', 'uppercase', 'quotes', 'markdown']
 
-const CHARACTERS: { value: Character; label: string }[] = [
-  { value: 'general', label: 'General' },
-  { value: 'gandalf', label: 'Gandalf' },
-  { value: 'aragorn', label: 'Aragorn' },
-  { value: 'frodo', label: 'Frodo' },
-  { value: 'sam', label: 'Samwise' },
-  { value: 'legolas', label: 'Legolas' },
-  { value: 'gimli', label: 'Gimli' },
-  { value: 'sauron', label: 'Sauron' },
-]
-
-const TONES: { value: Tone; label: string }[] = [
-  { value: 'cinematic', label: 'Cinematic' },
-  { value: 'poetic', label: 'Poetic' },
-  { value: 'dark', label: 'Dark' },
-  { value: 'heroic', label: 'Heroic' },
-  { value: 'funny', label: 'Funny' },
-]
-
-
-const FORMATTINGS: { value: Formatting; label: string }[] = [
-  { value: 'none', label: 'None' },
-  { value: 'uppercase', label: 'Uppercase' },
-  { value: 'quotes', label: 'Quotes' },
-  { value: 'markdown', label: 'Markdown' },
-]
-
-const PRESETS: { label: string; overrides: Partial<FormState> }[] = [
-  { label: 'Generate Funny', overrides: { theme: 'humor', tone: 'funny', character: 'sam' } },
-  { label: 'Like Tolkien',   overrides: { theme: 'epic', tone: 'poetic', character: 'general' } },
-  { label: 'Ancient Prophecy', overrides: { theme: 'ancient', tone: 'cinematic', character: 'gandalf' } },
-  { label: 'Like Mordor',    overrides: { theme: 'mordor', tone: 'dark', character: 'sauron' } },
+const PRESET_OVERRIDES: { key: 'funny' | 'tolkien' | 'prophecy' | 'mordor'; overrides: Partial<FormState> }[] = [
+  { key: 'funny',    overrides: { theme: 'humor',   tone: 'funny',    character: 'sam' } },
+  { key: 'tolkien',  overrides: { theme: 'epic',    tone: 'poetic',   character: 'general' } },
+  { key: 'prophecy', overrides: { theme: 'ancient', tone: 'cinematic', character: 'gandalf' } },
+  { key: 'mordor',   overrides: { theme: 'mordor',  tone: 'dark',     character: 'sauron' } },
 ]
 
 function Label({ children }: { children: React.ReactNode }) {
@@ -63,6 +31,7 @@ function Label({ children }: { children: React.ReactNode }) {
 }
 
 export function GeneratorForm({ form, onChange, onGenerate, isGenerating }: Props) {
+  const { t } = useTranslation()
   const set = <K extends keyof FormState>(key: K, value: FormState[K]) =>
     onChange({ ...form, [key]: value })
 
@@ -77,49 +46,40 @@ export function GeneratorForm({ form, onChange, onGenerate, isGenerating }: Prop
       }}
     >
       <h2 className="text-3xl md:text-4xl mb-6 leading-tight uppercase font-headline font-bold" style={{ color: '#fff' }}>
-        Customize Your Quest
+        {t('form.title')}
       </h2>
 
       <div className="space-y-8 text-left">
         {/* Selectors Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <Label>Theme</Label>
+            <Label>{t('form.theme')}</Label>
             <select value={form.theme} onChange={(e) => set('theme', e.target.value as Theme)}>
-              {THEMES.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
+              {THEME_VALUES.map((v) => <option key={v} value={v}>{t(`themes.${v}`)}</option>)}
             </select>
           </div>
 
           <div>
-            <Label>Character Voice</Label>
+            <Label>{t('form.characterVoice')}</Label>
             <select value={form.character} onChange={(e) => set('character', e.target.value as Character)}>
-              {CHARACTERS.map((c) => <option key={c.value} value={c.value}>{c.label}</option>)}
+              {CHARACTER_VALUES.map((v) => <option key={v} value={v}>{t(`characters.${v}`)}</option>)}
             </select>
           </div>
 
           <div>
-            <Label>Tone</Label>
+            <Label>{t('form.tone')}</Label>
             <select value={form.tone} onChange={(e) => set('tone', e.target.value as Tone)}>
-              {TONES.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
+              {TONE_VALUES.map((v) => <option key={v} value={v}>{t(`tones.${v}`)}</option>)}
             </select>
           </div>
 
           <div>
-            <Label>Formatting</Label>
+            <Label>{t('form.formatting')}</Label>
             <select value={form.formatting} onChange={(e) => set('formatting', e.target.value as Formatting)}>
-              {FORMATTINGS.map((f) => <option key={f.value} value={f.value}>{f.label}</option>)}
+              {FORMATTING_VALUES.map((v) => <option key={v} value={v}>{t(`formattings.${v}`)}</option>)}
             </select>
           </div>
 
-          <div>
-            <Label>Seed (optional)</Label>
-            <input
-              type="text"
-              placeholder="e.g. mordor, shire, barad-dur…"
-              value={form.seed}
-              onChange={(e) => set('seed', e.target.value)}
-            />
-          </div>
         </div>
 
         {/* Sliders */}
@@ -140,28 +100,28 @@ export function GeneratorForm({ form, onChange, onGenerate, isGenerating }: Prop
               />
             </button>
             <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--color-gold-light)' }}>
-              Paragraph Mode
+              {t('form.paragraphMode')}
             </span>
           </div>
 
           {form.paragraphs ? (
             <>
-              <SliderField label="Paragraphs" value={form.paragraphCount} min={1} max={8}
+              <SliderField label={t('form.paragraphs')} value={form.paragraphCount} min={1} max={8}
                 onChange={(v) => set('paragraphCount', v)} />
-              <SliderField label="Sentences per Paragraph" value={form.sentencesPerParagraph} min={1} max={8}
+              <SliderField label={t('form.sentencesPerParagraph')} value={form.sentencesPerParagraph} min={1} max={8}
                 onChange={(v) => set('sentencesPerParagraph', v)} />
             </>
           ) : (
-            <SliderField label="Sentences" value={form.sentences} min={1} max={15}
+            <SliderField label={t('form.sentences')} value={form.sentences} min={1} max={15}
               onChange={(v) => set('sentences', v)} />
           )}
         </div>
 
         {/* Preset buttons */}
         <div className="flex flex-wrap justify-center gap-3 pt-2">
-          {PRESETS.map((p) => (
+          {PRESET_OVERRIDES.map((p) => (
             <button
-              key={p.label}
+              key={p.key}
               type="button"
               onClick={() => { onChange({ ...form, ...p.overrides }); onGenerate(p.overrides) }}
               className="px-4 py-2 text-[10px] font-bold uppercase transition-colors"
@@ -180,7 +140,7 @@ export function GeneratorForm({ form, onChange, onGenerate, isGenerating }: Prop
                 e.currentTarget.style.color = 'var(--color-gold-light)'
               }}
             >
-              {p.label}
+              {t(`form.presets.${p.key}`)}
             </button>
           ))}
         </div>
@@ -203,7 +163,7 @@ export function GeneratorForm({ form, onChange, onGenerate, isGenerating }: Prop
             onMouseEnter={(e) => { e.currentTarget.style.background = '#facc15' }}
             onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--color-gold-light)' }}
           >
-            {isGenerating ? 'Forging…' : 'Generate'}
+            {isGenerating ? t('form.forging') : t('form.generate')}
           </motion.button>
         </div>
       </div>

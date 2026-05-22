@@ -1,0 +1,69 @@
+{
+  "header": {
+    "tagline": "Generate texts since from the Shire all into Mordor"
+  },
+  "footer": {
+    "credit": "Made with magic in Middle-earth"
+  },
+  "form": {
+    "title": "Customize Your Quest",
+    "theme": "Theme",
+    "characterVoice": "Character",
+    "tone": "Tone",
+    "formatting": "Formatting",
+    "seed": "Seed (optional)",
+    "seedPlaceholder": "e.g. mordor, shire, barad-dur…",
+    "paragraphMode": "Paragraph Mode",
+    "paragraphs": "Paragraphs",
+    "sentencesPerParagraph": "Sentences per Paragraph",
+    "sentences": "Sentences",
+    "generate": "Generate",
+    "forging": "Forging…",
+    "presets": {
+      "funny": "Generate Funny",
+      "tolkien": "Like Tolkien",
+      "prophecy": "Ancient Prophecy",
+      "mordor": "Like Mordor"
+    }
+  },
+  "result": {
+    "empty": "Your generated text will appear here. Choose a theme, character and tone, then press Generate.",
+    "copy": "Copy Text",
+    "copied": "✓ Copied!",
+    "exportJson": "Export JSON",
+    "exportTxt": "Export TXT"
+  },
+  "themes": {
+    "epic": "Epic",
+    "mordor": "Mordor",
+    "shire": "The Shire",
+    "battle": "Battle",
+    "forest": "Forest",
+    "wizard": "Wizard",
+    "humor": "Humor",
+    "ancient": "Ancient"
+  },
+  "characters": {
+    "general": "General",
+    "gandalf": "Gandalf",
+    "aragorn": "Aragorn",
+    "frodo": "Frodo",
+    "sam": "Samwise",
+    "legolas": "Legolas",
+    "gimli": "Gimli",
+    "sauron": "Sauron"
+  },
+  "tones": {
+    "cinematic": "Cinematic",
+    "poetic": "Poetic",
+    "dark": "Dark",
+    "heroic": "Heroic",
+    "funny": "Funny"
+  },
+  "formattings": {
+    "none": "None",
+    "uppercase": "Uppercase",
+    "quotes": "Quotes",
+    "markdown": "Markdown"
+  }
+}

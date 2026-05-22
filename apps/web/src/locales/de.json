@@ -1,0 +1,69 @@
+{
+  "header": {
+    "tagline": "Generiere Texte vom Auenland bis nach Mordor"
+  },
+  "footer": {
+    "credit": "Mit Magie in Mittelerde gemacht"
+  },
+  "form": {
+    "title": "Gestalte Deine Quest",
+    "theme": "Thema",
+    "characterVoice": "Charakter",
+    "tone": "Ton",
+    "formatting": "Formatierung",
+    "seed": "Startwert (optional)",
+    "seedPlaceholder": "z.B. mordor, auenland, barad-dur…",
+    "paragraphMode": "Absatzmodus",
+    "paragraphs": "Absätze",
+    "sentencesPerParagraph": "Sätze pro Absatz",
+    "sentences": "Sätze",
+    "generate": "Generieren",
+    "forging": "Schmieden…",
+    "presets": {
+      "funny": "Lustig Generieren",
+      "tolkien": "Wie Tolkien",
+      "prophecy": "Alte Prophezeiung",
+      "mordor": "Wie Mordor"
+    }
+  },
+  "result": {
+    "empty": "Dein generierter Text erscheint hier. Wähle ein Thema, einen Charakter und einen Ton, dann drücke Generieren.",
+    "copy": "Text Kopieren",
+    "copied": "✓ Kopiert!",
+    "exportJson": "JSON Exportieren",
+    "exportTxt": "TXT Exportieren"
+  },
+  "themes": {
+    "epic": "Episch",
+    "mordor": "Mordor",
+    "shire": "Auenland",
+    "battle": "Kampf",
+    "forest": "Wald",
+    "wizard": "Zauberer",
+    "humor": "Humor",
+    "ancient": "Uralt"
+  },
+  "characters": {
+    "general": "Allgemein",
+    "gandalf": "Gandalf",
+    "aragorn": "Aragorn",
+    "frodo": "Frodo",
+    "sam": "Samwise",
+    "legolas": "Legolas",
+    "gimli": "Gimli",
+    "sauron": "Sauron"
+  },
+  "tones": {
+    "cinematic": "Filmisch",
+    "poetic": "Poetisch",
+    "dark": "Dunkel",
+    "heroic": "Heroisch",
+    "funny": "Lustig"
+  },
+  "formattings": {
+    "none": "Keine",
+    "uppercase": "Großbuchstaben",
+    "quotes": "Anführungszeichen",
+    "markdown": "Markdown"
+  }
+}

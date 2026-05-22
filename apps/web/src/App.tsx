@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { generateLorem } from '@lord-of-the-ipsum/core'
 import type { Theme, Character, Tone, Locale, Formatting, GenerateResult } from '@lord-of-the-ipsum/core'
 import { Header } from './components/Header'
@@ -43,6 +44,7 @@ const FLOAT_CHARS = {
 }
 
 export default function App() {
+  const { i18n } = useTranslation()
   const [form, setForm] = useState<FormState>(DEFAULT_FORM)
   const [result, setResult] = useState<GenerateResult | null>(null)
   const [isGenerating, setIsGenerating] = useState(false)
@@ -98,7 +100,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden" style={{ background: '#0f1e3c' }}>
-      <LanguagePicker locale={form.locale} onChange={(locale) => setForm(f => ({ ...f, locale }))} />
+      <LanguagePicker locale={form.locale} onChange={(locale) => { setForm(f => ({ ...f, locale })); i18n.changeLanguage(locale) }} />
       <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-12 flex flex-col items-center relative z-10">
         <Header />
 

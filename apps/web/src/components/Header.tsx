@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next'
+
 export function Header() {
+  const { t } = useTranslation()
   return (
     <header className="text-center mb-16" style={{ color: 'var(--color-gold-light)' }}>
       <h1
@@ -11,7 +14,7 @@ export function Header() {
         className="mt-2 font-ringbearer text-sm tracking-widest"
         style={{ color: 'rgba(242,202,80,0.8)' }}
       >
-        Generate texts since from the Shire all into Mordor
+        {t('header.tagline')}
       </p>
     </header>
   )

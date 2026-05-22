@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import type { GenerateResult } from '@lord-of-the-ipsum/core'
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export function ResultCard({ result, copied, onCopy, onExportTxt, onExportJson }: Props) {
+  const { t } = useTranslation()
   return (
     <div className="mt-20 w-full max-w-3xl mx-auto">
       {/* Text card — always visible, fixed 500px, scrollable */}
@@ -65,7 +67,7 @@ export function ResultCard({ result, copied, onCopy, onExportTxt, onExportJson }
               className="font-body text-base italic"
               style={{ color: 'rgba(255,255,255,0.3)' }}
             >
-              Your generated text will appear here. Choose a theme, character and tone, then press Generate.
+              {t('result.empty')}
             </p>
           )}
         </div>
@@ -74,10 +76,10 @@ export function ResultCard({ result, copied, onCopy, onExportTxt, onExportJson }
       {/* Action buttons */}
       <div className="mt-12 flex flex-wrap justify-center gap-4 px-4">
         <ActionButton primary onClick={onCopy} disabled={!result}>
-          {copied ? '✓ Copied!' : 'Copy Text'}
+          {copied ? t('result.copied') : t('result.copy')}
         </ActionButton>
-        <ActionButton onClick={onExportJson} disabled={!result}>Export JSON</ActionButton>
-        <ActionButton onClick={onExportTxt} disabled={!result}>Export TXT</ActionButton>
+        <ActionButton onClick={onExportJson} disabled={!result}>{t('result.exportJson')}</ActionButton>
+        <ActionButton onClick={onExportTxt} disabled={!result}>{t('result.exportTxt')}</ActionButton>
       </div>
 
       {/* Decorative shadow ellipse */}
