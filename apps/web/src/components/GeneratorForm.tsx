@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import type { FormState } from '../App'
 import type { Theme, Character, Tone } from '@lord-of-the-ipsum/core'
+import { SliderField } from './SliderField'
 
 interface Props {
   form: FormState
@@ -128,20 +129,6 @@ export function GeneratorForm({ form, onChange, onGenerate, isGenerating }: Prop
           {isGenerating ? t('form.forging') : t('form.generate')}
         </motion.button>
       </div>
-    </div>
-  )
-}
-
-function SliderField({ label, value, min, max, onChange }: {
-  label: string; value: number; min: number; max: number; onChange: (v: number) => void
-}) {
-  return (
-    <div className="generator-form__slider">
-      <div className="generator-form__slider-header">
-        <span className="generator-form__slider-label">{label}</span>
-        <span className="generator-form__slider-value">{value}</span>
-      </div>
-      <input type="range" min={min} max={max} value={value} onChange={(e) => onChange(Number(e.target.value))} />
     </div>
   )
 }
