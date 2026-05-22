@@ -12,7 +12,7 @@ interface Props {
 export function ResultCard({ result, copied, onCopy, onExportTxt, onExportJson }: Props) {
   const { t } = useTranslation()
   return (
-    <div className="mt-20 w-full max-w-3xl mx-auto">
+    <div className="mt-6 sm:mt-20 w-full max-w-3xl mx-auto">
       {/* Text card — always visible, fixed 500px, scrollable */}
       <div
         className="shadow-2xl relative"
@@ -51,10 +51,10 @@ export function ResultCard({ result, copied, onCopy, onExportTxt, onExportJson }
           </div>
         )}
 
-        {/* Scrollable text area — always 500px tall */}
+        {/* Scrollable text area */}
         <div
-          className="overflow-y-auto px-8 py-6 space-y-4 leading-relaxed"
-          style={{ height: '500px' }}
+          className="overflow-y-auto px-6 sm:px-8 py-6 space-y-4 leading-relaxed"
+          style={{ height: 'clamp(260px, 50vh, 500px)' }}
         >
           {result ? (
             result.paragraphs.map((para, i) => (
@@ -74,7 +74,7 @@ export function ResultCard({ result, copied, onCopy, onExportTxt, onExportJson }
       </div>
 
       {/* Action buttons */}
-      <div className="mt-12 flex flex-wrap justify-center gap-4 px-4">
+      <div className="mt-4 flex flex-col sm:flex-row gap-3">
         <ActionButton primary onClick={onCopy} disabled={!result}>
           {copied ? t('result.copied') : t('result.copy')}
         </ActionButton>
@@ -82,8 +82,8 @@ export function ResultCard({ result, copied, onCopy, onExportTxt, onExportJson }
         <ActionButton onClick={onExportTxt} disabled={!result}>{t('result.exportTxt')}</ActionButton>
       </div>
 
-      {/* Decorative shadow ellipse */}
-      <div className="flex justify-center mt-2">
+      {/* Decorative shadow ellipse — desktop only */}
+      <div className="hidden sm:flex justify-center mt-2">
         <div className="w-60 h-4 rounded-full" style={{ background: 'rgba(0,0,0,0.4)' }} />
       </div>
     </div>
@@ -103,7 +103,7 @@ function ActionButton({
       <button
         onClick={onClick}
         disabled={disabled}
-        className="flex-1 min-w-[200px] font-bold py-4 px-8 text-lg uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
+        className="w-full font-bold py-4 px-8 text-lg uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
         style={{
           borderRadius: '9999px',
           background: 'var(--color-gold-light)',
@@ -122,7 +122,7 @@ function ActionButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className="flex-1 min-w-[200px] font-bold py-4 px-8 text-lg uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
+      className="w-full font-bold py-4 px-8 text-lg uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
       style={{
         borderRadius: '9999px',
         background: 'rgba(255,255,255,0.1)',

@@ -122,6 +122,16 @@
     box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
   }
 
+  /* River path — no rotation on mobile */
+  .river-path {
+    transform: translateX(-50%);
+  }
+  @media (min-width: 768px) {
+    .river-path {
+      transform: translateX(-50%) rotate(-3deg);
+    }
+  }
+
   /* Text input */
   input[type='text'] {
     background-color: var(--color-forge);

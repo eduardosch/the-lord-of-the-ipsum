@@ -17,6 +17,8 @@
     "paragraphs": "Párrafos",
     "sentencesPerParagraph": "Oraciones por Párrafo",
     "sentences": "Oraciones",
+    "length": "Longitud",
+    "orCustomize": "o personaliza",
     "generate": "Generar",
     "forging": "Forjando…",
     "presets": {
@@ -32,6 +34,11 @@
     "copied": "✓ ¡Copiado!",
     "exportJson": "Exportar JSON",
     "exportTxt": "Exportar TXT"
+  },
+  "length": {
+    "short": "Corto",
+    "medium": "Medio",
+    "long": "Largo"
   },
   "themes": {
     "epic": "Épico",

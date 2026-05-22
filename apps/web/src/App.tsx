@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { generateLorem } from '@lord-of-the-ipsum/core'
 import type { Theme, Character, Tone, Locale, Formatting, GenerateResult } from '@lord-of-the-ipsum/core'
@@ -108,13 +108,12 @@ export default function App() {
         <section className="relative w-full flex flex-col items-center mb-20">
           {/* River path decorative background */}
           <div
-            className="absolute left-1/2 -translate-x-1/2 w-[120%] opacity-80 -z-10"
+            className="river-path absolute left-1/2 w-[120%] h-0 sm:h-auto opacity-0 sm:opacity-80 -z-10"
             style={{
               top: '5rem',
-              height: '1500px',
+              height: '1300px',
               background: '#264d72',
               borderRadius: '50% / 10%',
-              transform: 'translateX(-50%) rotate(-3deg)',
             }}
           />
 
@@ -166,21 +165,47 @@ export default function App() {
               style={{ border: '4px solid var(--color-gold-light)' }} />
           </div>
 
-          {/* Result card — always visible */}
-          <motion.div
-            className="w-full"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-          >
-            <ResultCard
-              result={result}
-              copied={copied}
-              onCopy={handleCopy}
-              onExportTxt={handleExportTxt}
-              onExportJson={handleExportJson}
-            />
-          </motion.div>
+          {/* Desktop: always visible with placeholder */}
+          <div className="hidden sm:block w-full">
+            <motion.div
+              className="w-full"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+            >
+              <ResultCard
+                result={result}
+                copied={copied}
+                onCopy={handleCopy}
+                onExportTxt={handleExportTxt}
+                onExportJson={handleExportJson}
+              />
+            </motion.div>
+          </div>
+
+          {/* Mobile: only shown after first generate */}
+          <div className="sm:hidden w-full">
+            <AnimatePresence>
+              {result && (
+                <motion.div
+                  key="mobile-result"
+                  className="w-full"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.45, ease: 'easeOut' }}
+                >
+                  <ResultCard
+                    result={result}
+                    copied={copied}
+                    onCopy={handleCopy}
+                    onExportTxt={handleExportTxt}
+                    onExportJson={handleExportJson}
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </section>
       </main>
 

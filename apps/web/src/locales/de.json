@@ -17,6 +17,8 @@
     "paragraphs": "Absätze",
     "sentencesPerParagraph": "Sätze pro Absatz",
     "sentences": "Sätze",
+    "length": "Länge",
+    "orCustomize": "oder anpassen",
     "generate": "Generieren",
     "forging": "Schmieden…",
     "presets": {
@@ -32,6 +34,11 @@
     "copied": "✓ Kopiert!",
     "exportJson": "JSON Exportieren",
     "exportTxt": "TXT Exportieren"
+  },
+  "length": {
+    "short": "Kurz",
+    "medium": "Mittel",
+    "long": "Lang"
   },
   "themes": {
     "epic": "Episch",
