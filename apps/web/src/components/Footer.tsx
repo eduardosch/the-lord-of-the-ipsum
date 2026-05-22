@@ -12,7 +12,7 @@ export function Footer() {
   const { t } = useTranslation()
   return (
     <footer
-      className="mt-20 w-full pt-10 pb-12 relative"
+      className="mt-20 w-full pt-5 pb-5 relative"
       style={{
         background: '#264d72',
         borderTop: '1px solid rgba(255,255,255,0.05)',
@@ -35,7 +35,7 @@ export function Footer() {
         ))}
       </div>
       <div
-        className="text-center text-xs uppercase mt-4"
+        className="text-center text-xs uppercase"
         style={{ color: 'rgba(242,202,80,0.4)', letterSpacing: '0.2em' }}
       >
         {t('footer.credit')}

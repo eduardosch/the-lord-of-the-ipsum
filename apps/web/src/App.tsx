@@ -105,7 +105,7 @@ export default function App() {
         <Header />
 
         {/* Generator section with river path + floating characters */}
-        <section className="relative w-full flex flex-col items-center">
+        <section className="relative w-full flex flex-col items-center mb-20">
           {/* River path decorative background */}
           <div
             className="absolute left-1/2 -translate-x-1/2 w-[120%] opacity-80 -z-10"
