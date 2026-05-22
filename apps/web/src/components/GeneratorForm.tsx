@@ -45,7 +45,7 @@ export function GeneratorForm({ form, onChange, onGenerate, isGenerating }: Prop
         border: '1px solid rgba(255,255,255,0.1)',
       }}
     >
-      <h2 className="text-3xl md:text-4xl mb-6 leading-tight uppercase font-headline font-bold" style={{ color: '#fff' }}>
+      <h2 className="text-xl md:text-2xl mb-6 leading-tight uppercase font-headline font-bold" style={{ color: '#fff' }}>
         {t('form.title')}
       </h2>
 
