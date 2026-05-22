@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { generateLorem } from '@lord-of-the-ipsum/core'
 import type { Theme, Character, Tone, Locale, Formatting, GenerateResult } from '@lord-of-the-ipsum/core'
+import { downloadFile } from './helpers/download'
 import { Header } from './components/Header'
 import { GeneratorForm } from './components/GeneratorForm'
 import { ResultCard } from './components/ResultCard'
@@ -80,21 +81,13 @@ export default function App() {
 
   const handleExportTxt = useCallback(() => {
     if (!result) return
-    const blob = new Blob([result.text], { type: 'text/plain' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url; a.download = `lord-of-the-ipsum-${result.seed}.txt`; a.click()
-    URL.revokeObjectURL(url)
+    downloadFile(result.text, `lord-of-the-ipsum-${result.seed}.txt`, 'text/plain')
   }, [result])
 
   const handleExportJson = useCallback(() => {
     if (!result) return
     const data = { seed: result.seed, options: result.options, paragraphs: result.paragraphs, sentences: result.sentences }
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url; a.download = `lord-of-the-ipsum-${result.seed}.json`; a.click()
-    URL.revokeObjectURL(url)
+    downloadFile(JSON.stringify(data, null, 2), `lord-of-the-ipsum-${result.seed}.json`, 'application/json')
   }, [result])
 
   return (
