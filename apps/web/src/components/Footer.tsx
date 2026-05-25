@@ -20,6 +20,7 @@ export function Footer() {
         ))}
       </div>
       <div className="footer__credit">{t('footer.credit')}</div>
+      <div className='footer__author'>Eduardo Schröder</div>
     </footer>
   )
 }

@@ -45,6 +45,16 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: rgba(242, 202, 80, 0.4);
+    color: rgba(242, 202, 80, 0.5);
+  }
+
+  &__author {
+    margin-top: .2rem;
+    font-weight: 600;;
+    text-align: center;
+    font-size: 0.75rem;
+    font-family: v.$font-ringbearer;
+    letter-spacing: 0.2em;
+    color: rgba(242, 202, 80, 0.6);
   }
 }
