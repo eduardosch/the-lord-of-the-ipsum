@@ -2,6 +2,8 @@
 
 A Lord of the Rings-inspired Lorem Ipsum generator.
 
+https://the-lord-of-the-ipsum.netlify.app/
+
 ## Setup
 
 Requires **Node.js 18+** and **pnpm 9+**.
